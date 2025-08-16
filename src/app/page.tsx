@@ -1,103 +1,158 @@
-import Image from "next/image";
+import ToolCard from '@/components/ToolCard';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const encodingTools = [
+    { title: 'Base編碼', description: 'Base64、Base32、Base16', href: '/tools/base64', icon: '🔐' },
+    { title: 'Hex編碼', description: 'Hex，十六進制編碼轉換', href: '/tools/hex', icon: '🔢' },
+    { title: 'URL編碼', description: 'URL編碼解碼', href: '/tools/url', icon: '🌐' },
+    { title: 'Quoted-printable編碼', description: 'Quoted-printable編碼解碼', href: '/tools/quoted', icon: '📝' },
+    { title: 'Mimetypes', description: '取得http訊息標頭應用類型', href: '/tools/mimetypes', icon: '📄' },
+    { title: 'HTML編碼', description: 'HTML實體編碼解碼', href: '/tools/html', icon: '🏷️' },
+    { title: 'Escape編碼', description: 'JavaScript Escape編碼', href: '/tools/escape', icon: '🔀' },
+    { title: '敲擊碼', description: 'Tap code敲擊碼', href: '/tools/tapcode', icon: '👆' },
+    { title: '摩斯電碼', description: 'Morse code摩斯電碼', href: '/tools/morse', icon: '📡' },
+    { title: '雜湊計算', description: 'MD5、SHA1、SHA256等雜湊計算', href: '/tools/hash', icon: '🔒' },
+    { title: 'AES加密', description: '支援5種模式，5種填充', href: '/tools/aes', icon: '🛡️' },
+    { title: 'DES加密', description: '支援5種模式，5種填充', href: '/tools/des', icon: '🔑' },
+    { title: 'Triple DES加密', description: '支援5種模式，5種填充', href: '/tools/3des', icon: '🔐' },
+    { title: 'RC4加密', description: '多種字元集、Base64輸出', href: '/tools/rc4', icon: '🔄' },
+    { title: '進制轉換', description: 'ASCII、任意進制轉換', href: '/tools/radix', icon: '🔢' },
+    { title: 'Base36編碼', description: 'Base36，支援整數', href: '/tools/base36', icon: '🔀' },
+    { title: 'Base58編碼', description: '字元表，支援中文編碼', href: '/tools/base58', icon: '🔤' },
+    { title: 'Base62編碼', description: 'Base62，整數與字串互轉', href: '/tools/base62', icon: '🔢' },
+    { title: 'Base91編碼', description: 'Base91，整數與字串互轉', href: '/tools/base91', icon: '🔀' },
+    { title: '公鑰解析', description: '取得加密類型、n、e等參數', href: '/tools/pubkey', icon: '🔓' },
+    { title: 'RSA私鑰解析', description: '提取私鑰的n、e、d、p、q', href: '/tools/rsa-private', icon: '🔑' },
+    { title: 'Base92編碼', description: 'Base92線上編碼、解碼', href: '/tools/base92', icon: '🔀' },
+    { title: 'Base85編碼', description: 'Base85線上編碼、解碼', href: '/tools/base85', icon: '🔤' },
+    { title: 'ASCII編碼轉換', description: 'Unicode、UTF-16、UTF-32', href: '/tools/ascii', icon: '📝' },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+  const algorithmTools = [
+    { title: 'ADFGX密碼', description: 'ADFGX Cipher', href: '/tools/adfgx', icon: '🔤' },
+    { title: 'ADFGVX密碼', description: 'ADFGVX Cipher', href: '/tools/adfgvx', icon: '🔠' },
+    { title: '仿射密碼', description: 'Affine Cipher', href: '/tools/affine', icon: '📐' },
+    { title: '自動密鑰密碼', description: 'Autokey Cipher', href: '/tools/autokey', icon: '🔐' },
+    { title: '埃特巴什碼', description: 'Atbash Cipher', href: '/tools/atbash', icon: '🔄' },
+    { title: '博福特密碼', description: 'Beaufort Cipher', href: '/tools/beaufort', icon: '🌊' },
+    { title: '雙密碼', description: 'Bifid Cipher', href: '/tools/bifid', icon: '👯' },
+    { title: '凱薩密碼', description: 'Caesar Cipher', href: '/tools/caesar', icon: '👑' },
+    { title: '列移位密碼', description: 'Columnar Transposition Cipher', href: '/tools/columnar', icon: '📊' },
+    { title: '恩尼格瑪密碼', description: 'Enigma M3 Cipher', href: '/tools/enigma', icon: '⚙️', isComingSoon: true },
+    { title: '四方密碼', description: 'Foursquare Cipher', href: '/tools/foursquare', icon: '⬛' },
+    { title: 'Gronsfeld密碼', description: 'Gronsfeld Cipher', href: '/tools/gronsfeld', icon: '🔢' },
+    { title: '攜帶型機械密碼', description: 'M-209 Cipher', href: '/tools/m209', icon: '📻', isComingSoon: true },
+    { title: '普萊費爾密碼', description: 'Playfair Cipher', href: '/tools/playfair', icon: '🎯' },
+    { title: '波利比奧斯方陣密碼', description: 'Polybius Square Cipher', href: '/tools/polybius', icon: '🔳', isComingSoon: true },
+    { title: 'Porta密碼', description: 'Porta Cipher', href: '/tools/porta', icon: '🚪' },
+    { title: '柵欄密碼', description: 'Railfence Cipher', href: '/tools/railfence', icon: '🚧' },
+    { title: 'Rot13密碼', description: 'Rot13 Cipher', href: '/tools/rot13', icon: '🔄' },
+    { title: '簡單替換密碼', description: 'Simple Substitution Cipher', href: '/tools/substitution', icon: '🔀' },
+    { title: '維吉尼亞密碼', description: 'Vigenere Cipher', href: '/tools/vigenere', icon: '📊' },
+    { title: '豬圈密碼', description: 'Pigpen Cipher', href: '/tools/pigpen', icon: '🐷' },
+    { title: '培根密碼', description: 'Baconian Cipher', href: '/tools/bacon', icon: '🥓' },
+    { title: '滾動密鑰密碼', description: 'Running Key Cipher', href: '/tools/runkey', icon: '🏃' },
+    { title: '希爾密碼', description: 'Hill Cipher', href: '/tools/hill', icon: '⛰️', isComingSoon: true },
+    { title: '關鍵字密碼', description: 'Keyword Cipher', href: '/tools/keyword', icon: '🔑' },
+    { title: 'A1z26密碼', description: 'A1z26 Cipher', href: '/tools/a1z26', icon: '🔤' },
+  ];
+
+  const miscTools = [
+    { title: 'XXencode', description: 'XXencode編碼解碼', href: '/tools/xxencode', icon: '❌' },
+    { title: 'UUencode', description: 'UUencode編碼解碼', href: '/tools/uuencode', icon: '🔄' },
+    { title: 'PPencode', description: 'PPencode編碼解碼', href: '/tools/ppencode', icon: '🅿️' },
+    { title: 'AAencode', description: 'AAencode編碼解碼', href: '/tools/aaencode', icon: '🅰️' },
+    { title: 'JJencode', description: 'JJencode編碼解碼', href: '/tools/jjencode', icon: '🇯🇵' },
+    { title: 'JSfuck', description: 'JSfuck，試試看', href: '/tools/jsfuck', icon: '🤬' },
+    { title: 'Brainfuck', description: 'Brainfuck，試試看', href: '/tools/brainfuck', icon: '🧠' },
+    { title: 'BubbleBabble', description: 'BubbleBabble編碼解碼', href: '/tools/bubblebabble', icon: '🫧' },
+    { title: 'Handycode', description: 'Handycode編碼解碼', href: '/tools/handycode', icon: '✋' },
+    { title: 'Punycode', description: 'Punycode編碼解碼', href: '/tools/punycode', icon: '🌐' },
+    { title: 'Poemcode', description: 'Poemcode編碼解碼', href: '/tools/poemcode', icon: '📝', isComingSoon: true },
+    { title: 'WebSocket測試', description: 'WebSocket連結測試，傳送資料', href: '/tools/websocket', icon: '🔌' },
+    { title: 'HTTP(S)回應標頭檢視', description: '檢視請求的回應標頭資訊', href: '/tools/headers', icon: '📋' },
+  ];
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-b from-teal-50 to-white py-20">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              CTF線上工具
+            </h1>
+            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              為CTF比賽人員、程式設計師提供50多種常用編碼、20多種古典密碼學，以及10多種雜項工具
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="#tools"
+                className="bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
+              >
+                開始使用
+              </a>
+              <a
+                href="/about"
+                className="border border-teal-600 text-teal-600 px-8 py-3 rounded-lg font-semibold hover:bg-teal-50 transition-colors"
+              >
+                瞭解更多
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* CTF Encoding Tools */}
+        <section id="tools" className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">CTF編碼</h2>
+              <div className="w-20 h-1 bg-teal-600 mx-auto"></div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {encodingTools.map((tool, index) => (
+                <ToolCard key={index} {...tool} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTF Algorithm Tools */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">CTF演算法</h2>
+              <div className="w-20 h-1 bg-teal-600 mx-auto"></div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {algorithmTools.map((tool, index) => (
+                <ToolCard key={index} {...tool} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTF Miscellaneous Tools */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">CTF雜項</h2>
+              <div className="w-20 h-1 bg-teal-600 mx-auto"></div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {miscTools.map((tool, index) => (
+                <ToolCard key={index} {...tool} />
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+      <Footer />
     </div>
   );
 }

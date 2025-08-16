@@ -64,16 +64,16 @@ export default function CaesarTool() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             {/* Header */}
-            <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold text-gray-900 mb-4">凱薩密碼工具</h1>
-              <p className="text-gray-600">經典的字母替換密碼，通過固定的字母偏移進行加密</p>
+            <div className="text-center mb-8 bg-white p-4 rounded-lg">
+              <h1 className="text-3xl font-bold text-black mb-4">凱薩密碼工具</h1>
+              <p className="text-black">經典的字母替換密碼，通過固定的字母偏移進行加密</p>
             </div>
 
             {/* Controls */}
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
               <div className="flex flex-wrap gap-4 mb-6">
                 <div className="flex items-center space-x-2">
-                  <label className="text-sm font-medium text-gray-700">模式:</label>
+                  <label className="text-sm font-medium text-black">模式:</label>
                   <select
                     value={mode}
                     onChange={(e) => setMode(e.target.value as 'encrypt' | 'decrypt')}
@@ -85,7 +85,7 @@ export default function CaesarTool() {
                 </div>
                 
                 <div className="flex items-center space-x-2">
-                  <label className="text-sm font-medium text-gray-700">偏移量:</label>
+                  <label className="text-sm font-medium text-black">偏移量:</label>
                   <input
                     type="number"
                     value={shift}
@@ -104,7 +104,7 @@ export default function CaesarTool() {
                     onChange={(e) => setPreserveCase(e.target.checked)}
                     className="bg-white text-teal-600 focus:ring-teal-500"
                   />
-                  <label htmlFor="preserveCase" className="text-sm font-medium text-gray-700">
+                  <label htmlFor="preserveCase" className="text-sm font-medium text-black">
                     保持大小寫
                   </label>
                 </div>
@@ -113,7 +113,7 @@ export default function CaesarTool() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {/* Input */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-black mb-2">
                     輸入 ({mode === 'encrypt' ? '明文' : '密文'})
                   </label>
                   <textarea
@@ -126,7 +126,7 @@ export default function CaesarTool() {
 
                 {/* Output */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-black mb-2">
                     輸出 ({mode === 'encrypt' ? '密文' : '明文'})
                   </label>
                   <textarea
@@ -155,14 +155,14 @@ export default function CaesarTool() {
                 </button>
                 <button
                   onClick={handleClear}
-                  className="border border-gray-300 text-gray-700 px-6 py-2 rounded-md hover:bg-gray-50 transition-colors"
+                  className="border border-gray-300 text-black px-6 py-2 rounded-md hover:bg-gray-50 transition-colors"
                 >
                   清空
                 </button>
                 <button
                   onClick={handleCopy}
                   disabled={!output}
-                  className="border border-gray-300 text-gray-700 px-6 py-2 rounded-md hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="border border-gray-300 text-black px-6 py-2 rounded-md hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   複製結果
                 </button>
@@ -173,10 +173,10 @@ export default function CaesarTool() {
             {allPossible && (
               <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold text-gray-900">所有可能的解密結果</h3>
+                  <h3 className="text-lg font-semibold text-black">所有可能的解密結果</h3>
                   <button
                     onClick={handleCopyAll}
-                    className="text-sm border border-gray-300 text-gray-700 px-4 py-1 rounded-md hover:bg-gray-50 transition-colors"
+                    className="text-sm border border-gray-300 text-black px-4 py-1 rounded-md hover:bg-gray-50 transition-colors"
                   >
                     複製全部
                   </button>

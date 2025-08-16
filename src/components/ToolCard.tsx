@@ -21,12 +21,12 @@ export default function ToolCard({ title, description, href, icon, isComingSoon 
             </div>
           )}
           <div className="flex-1 min-w-0">
-            <h3 className="text-lg font-semibold text-gray-900 group-hover:text-teal-600 transition-colors">
+            <h3 className="text-lg font-semibold text-black group-hover:text-teal-600 transition-colors">
               {title}
             </h3>
-            <p className="mt-2 text-sm text-gray-600">{description}</p>
+            <p className="mt-2 text-sm text-black">{description}</p>
             <div className="mt-4 flex items-center justify-between">
-              <span className="text-xs text-gray-500">hiencode.com</span>
+              <span className="text-xs text-black">hiencode.com</span>
               <span className={`text-sm ${isComingSoon ? 'text-gray-400' : 'text-teal-600 group-hover:text-teal-700'} font-medium`}>
                 {isComingSoon ? '開發中' : '進入 →'}
               </span>

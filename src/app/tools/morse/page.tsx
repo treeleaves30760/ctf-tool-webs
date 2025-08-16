@@ -140,16 +140,16 @@ export default function MorseTool() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             {/* Header */}
-            <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold text-gray-900 mb-4">摩斯電碼工具</h1>
-              <p className="text-gray-600">經典的點劃通訊編碼系統</p>
+            <div className="text-center mb-8 bg-white p-4 rounded-lg">
+              <h1 className="text-3xl font-bold text-black mb-4">摩斯電碼工具</h1>
+              <p className="text-black">經典的點劃通訊編碼系統</p>
             </div>
 
             {/* Controls */}
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
               <div className="flex flex-wrap gap-4 mb-6">
                 <div className="flex items-center space-x-2">
-                  <label className="text-sm font-medium text-gray-700">模式:</label>
+                  <label className="text-sm font-medium text-black">模式:</label>
                   <select
                     value={mode}
                     onChange={(e) => setMode(e.target.value as 'encode' | 'decode')}
@@ -161,7 +161,7 @@ export default function MorseTool() {
                 </div>
                 
                 <div className="flex items-center space-x-2">
-                  <label className="text-sm font-medium text-gray-700">分隔符:</label>
+                  <label className="text-sm font-medium text-black">分隔符:</label>
                   <select
                     value={separator}
                     onChange={(e) => setSeparator(e.target.value)}
@@ -178,7 +178,7 @@ export default function MorseTool() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {/* Input */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-black mb-2">
                     輸入 ({mode === 'encode' ? '普通文字' : '摩斯電碼'})
                   </label>
                   <textarea
@@ -191,7 +191,7 @@ export default function MorseTool() {
 
                 {/* Output */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-black mb-2">
                     輸出 ({mode === 'encode' ? '摩斯電碼' : '普通文字'})
                   </label>
                   <textarea
@@ -220,14 +220,14 @@ export default function MorseTool() {
                 </button>
                 <button
                   onClick={handleClear}
-                  className="border border-gray-300 text-gray-700 px-6 py-2 rounded-md hover:bg-gray-50 transition-colors"
+                  className="border border-gray-300 text-black px-6 py-2 rounded-md hover:bg-gray-50 transition-colors"
                 >
                   清空
                 </button>
                 <button
                   onClick={handleCopy}
                   disabled={!output}
-                  className="border border-gray-300 text-gray-700 px-6 py-2 rounded-md hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="border border-gray-300 text-black px-6 py-2 rounded-md hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   複製結果
                 </button>
@@ -236,7 +236,7 @@ export default function MorseTool() {
 
             {/* Morse Code Chart */}
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">摩斯電碼對照表</h3>
+              <h3 className="text-lg font-semibold text-black mb-4">摩斯電碼對照表</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 text-sm">
                 {Object.entries(morseCode).map(([char, morse]) => (
                   <div key={char} className="flex justify-between items-center p-2 bg-gray-50 rounded">

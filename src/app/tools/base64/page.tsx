@@ -115,7 +115,7 @@ export default function Base64Tool() {
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
               <div className="flex flex-wrap gap-4 mb-6">
                 <div className="flex items-center space-x-2">
-                  <label className="text-sm font-medium text-gray-700">模式:</label>
+                  <label className="text-sm font-medium text-black">模式:</label>
                   <select
                     value={mode}
                     onChange={(e) => setMode(e.target.value as 'encode' | 'decode')}
@@ -127,7 +127,7 @@ export default function Base64Tool() {
                 </div>
                 
                 <div className="flex items-center space-x-2">
-                  <label className="text-sm font-medium text-gray-700">編碼類型:</label>
+                  <label className="text-sm font-medium text-black">編碼類型:</label>
                   <select
                     value={encoding}
                     onChange={(e) => setEncoding(e.target.value as 'base64' | 'base32' | 'base16')}
@@ -143,7 +143,7 @@ export default function Base64Tool() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {/* Input */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-black mb-2">
                     輸入 ({mode === 'encode' ? '原文' : '編碼文字'})
                   </label>
                   <textarea
@@ -156,7 +156,7 @@ export default function Base64Tool() {
 
                 {/* Output */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-black mb-2">
                     輸出 ({mode === 'encode' ? '編碼結果' : '解碼結果'})
                   </label>
                   <textarea
@@ -178,14 +178,14 @@ export default function Base64Tool() {
                 </button>
                 <button
                   onClick={handleClear}
-                  className="border border-gray-300 text-gray-700 px-6 py-2 rounded-md hover:bg-gray-50 transition-colors"
+                  className="border border-gray-300 text-black px-6 py-2 rounded-md hover:bg-gray-50 transition-colors"
                 >
                   清空
                 </button>
                 <button
                   onClick={handleCopy}
                   disabled={!output}
-                  className="border border-gray-300 text-gray-700 px-6 py-2 rounded-md hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="border border-gray-300 text-black px-6 py-2 rounded-md hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   複製結果
                 </button>

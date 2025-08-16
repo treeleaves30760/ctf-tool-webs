@@ -11,20 +11,20 @@ export default function AboutPage() {
 					<div className="max-w-4xl mx-auto">
 						{/* Header */}
 						<div className="text-center mb-8">
-							<h1 className="text-3xl font-bold text-gray-900 mb-4">
+							<h1 className="text-3xl font-bold text-black mb-4">
 								關於 CTF 線上工具
 							</h1>
-							<p className="text-gray-600">專業的CTF競賽工具平台</p>
+							<p className="text-black">專業的CTF競賽工具平台</p>
 						</div>
 
 						{/* Content */}
 						<div className="space-y-8">
 							{/* Introduction */}
 							<section className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-								<h2 className="text-2xl font-semibold text-gray-900 mb-4">
+								<h2 className="text-2xl font-semibold text-black mb-4">
 									專案介紹
 								</h2>
-								<div className="text-gray-700 space-y-4">
+								<div className="text-black space-y-4">
 									<p>
 										CTF線上工具是一個專為CTF競賽和網路安全學習者設計的綜合性工具平台。
 										我們致力於提供最全面、最實用的線上編解碼和密碼學工具。
@@ -38,7 +38,7 @@ export default function AboutPage() {
 
 							{/* Features */}
 							<section className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-								<h2 className="text-2xl font-semibold text-gray-900 mb-4">
+								<h2 className="text-2xl font-semibold text-black mb-4">
 									功能特色
 								</h2>
 								<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -46,7 +46,7 @@ export default function AboutPage() {
 										<h3 className="text-lg font-semibold text-teal-600 mb-2">
 											🔐 編碼工具
 										</h3>
-										<ul className="text-gray-700 space-y-1">
+										<ul className="text-black space-y-1">
 											<li>• Base家族編碼 (Base64, Base32, Base16等)</li>
 											<li>• URL、HTML、JavaScript編碼</li>
 											<li>• 進制轉換工具</li>
@@ -58,7 +58,7 @@ export default function AboutPage() {
 										<h3 className="text-lg font-semibold text-teal-600 mb-2">
 											🔢 密碼學演算法
 										</h3>
-										<ul className="text-gray-700 space-y-1">
+										<ul className="text-black space-y-1">
 											<li>• 古典密碼 (凱薩、維吉尼亞等)</li>
 											<li>• 替換密碼 (仿射、柵欄等)</li>
 											<li>• 特殊編碼 (摩斯、敲擊碼)</li>
@@ -97,18 +97,18 @@ export default function AboutPage() {
 
 							{/* Contact */}
 							<section className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-								<h2 className="text-2xl font-semibold text-gray-900 mb-4">
+								<h2 className="text-2xl font-semibold text-black mb-4">
 									聯繫我們
 								</h2>
 								<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 									<div>
-										<h3 className="text-lg font-semibold text-gray-900 mb-2">
+										<h3 className="text-lg font-semibold text-black mb-2">
 											意見回饋
 										</h3>
-										<p className="text-gray-700 mb-2">
+										<p className="text-black mb-2">
 											如果您在使用過程中遇到問題，或有功能建議，歡迎聯繫我們：
 										</p>
-										<ul className="text-gray-700 space-y-1">
+										<ul className="text-black space-y-1">
 											<li>📧 Email: treeleaves30760@gmail.com</li>
 											<li>
 												🐙 GitHub:{" "}
@@ -123,13 +123,13 @@ export default function AboutPage() {
 										</ul>
 									</div>
 									<div>
-										<h3 className="text-lg font-semibold text-gray-900 mb-2">
+										<h3 className="text-lg font-semibold text-black mb-2">
 											支持專案
 										</h3>
-										<p className="text-gray-700 mb-2">
+										<p className="text-black mb-2">
 											如果這個專案對您有幫助，您可以通過以下方式支持我們：
 										</p>
-										<ul className="text-gray-700 space-y-1">
+										<ul className="text-black space-y-1">
 											<li>⭐ 給專案點個星星</li>
 											<li>🔗 分享給更多朋友</li>
 											<li>💡 提出改進建議</li>

@@ -28,6 +28,12 @@ export default function Home() {
     { title: 'Base92編碼', description: 'Base92線上編碼、解碼', href: '/tools/base92', icon: '🔀' },
     { title: 'Base85編碼', description: 'Base85線上編碼、解碼', href: '/tools/base85', icon: '🔤' },
     { title: 'ASCII編碼轉換', description: 'Unicode、UTF-16、UTF-32', href: '/tools/ascii', icon: '📝' },
+    { title: 'ROT47編碼', description: 'ROT47編碼解碼', href: '/tools/rot47', icon: '🔄' },
+    { title: '二進制編碼', description: '二進制與文字互轉', href: '/tools/binary', icon: '💾' },
+    { title: '八進制編碼', description: '八進制與文字互轉', href: '/tools/octal', icon: '🔢' },
+    { title: 'JWT解碼', description: 'JSON Web Token解析', href: '/tools/jwt', icon: '🎫' },
+    { title: 'Zlib壓縮', description: 'Zlib壓縮與解壓縮', href: '/tools/zlib', icon: '📦' },
+    { title: 'Gzip壓縮', description: 'Gzip壓縮與解壓縮', href: '/tools/gzip', icon: '🗜️' },
   ];
 
   const algorithmTools = [
@@ -57,6 +63,12 @@ export default function Home() {
     { title: '希爾密碼', description: 'Hill Cipher', href: '/tools/hill', icon: '⛰️', isComingSoon: true },
     { title: '關鍵字密碼', description: 'Keyword Cipher', href: '/tools/keyword', icon: '🔑' },
     { title: 'A1z26密碼', description: 'A1z26 Cipher', href: '/tools/a1z26', icon: '🔤' },
+    { title: 'XOR密碼', description: 'XOR異或加密解密', href: '/tools/xor', icon: '⚡' },
+    { title: '一次性密碼本', description: 'One-time Pad密碼', href: '/tools/otp', icon: '📄' },
+    { title: '書本密碼', description: 'Book Cipher', href: '/tools/book', icon: '📚' },
+    { title: '同音替換密碼', description: 'Homophonic Substitution', href: '/tools/homophonic', icon: '🔊' },
+    { title: '虛無主義密碼', description: 'Nihilist Cipher', href: '/tools/nihilist', icon: '❌' },
+    { title: '棋盤密碼', description: 'Checkerboard Cipher', href: '/tools/checkerboard', icon: '♟️' },
   ];
 
   const miscTools = [
@@ -73,6 +85,16 @@ export default function Home() {
     { title: 'Poemcode', description: 'Poemcode編碼解碼', href: '/tools/poemcode', icon: '📝', isComingSoon: true },
     { title: 'WebSocket測試', description: 'WebSocket連結測試，傳送資料', href: '/tools/websocket', icon: '🔌' },
     { title: 'HTTP(S)回應標頭檢視', description: '檢視請求的回應標頭資訊', href: '/tools/headers', icon: '📋' },
+    { title: 'QR碼工具', description: 'QR碼產生器與解碼器', href: '/tools/qrcode', icon: '📱' },
+    { title: '條碼工具', description: '條碼產生器與解碼器', href: '/tools/barcode', icon: '📊' },
+    { title: '隱寫術工具', description: '圖片隱寫分析工具', href: '/tools/steganography', icon: '🖼️' },
+    { title: '正規表達式測試', description: 'RegEx正規表達式測試器', href: '/tools/regex', icon: '🔍' },
+    { title: 'JSON格式化', description: 'JSON格式化與驗證', href: '/tools/json', icon: '📄' },
+    { title: 'XML格式化', description: 'XML格式化與驗證', href: '/tools/xml', icon: '📋' },
+    { title: '密碼產生器', description: '安全密碼產生器', href: '/tools/password', icon: '🔐' },
+    { title: '網路工具', description: 'Ping、DNS查詢等網路工具', href: '/tools/network', icon: '🌐' },
+    { title: '時間戳轉換', description: 'Unix時間戳轉換工具', href: '/tools/timestamp', icon: '⏰' },
+    { title: '顏色轉換', description: 'RGB、HEX、HSL顏色轉換', href: '/tools/color', icon: '🎨' },
   ];
 
   return (
@@ -87,7 +109,7 @@ export default function Home() {
               CTF線上工具
             </h1>
             <p className="text-xl text-black mb-8 max-w-3xl mx-auto">
-              為CTF比賽人員、程式設計師提供50多種常用編碼、20多種古典密碼學，以及10多種雜項工具
+              為CTF比賽人員、程式設計師提供60多種常用編碼、30多種古典密碼學，以及20多種雜項工具
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

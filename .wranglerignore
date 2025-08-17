@@ -1,0 +1,6 @@
+.next/cache/
+.next/trace/
+**/*.map
+node_modules/
+.git/
+.env*

@@ -3,10 +3,3 @@ compatibility_date = "2025-08-16"
 
 [assets]
 directory = ".next"
-exclude = [
-  "cache/**/*",
-  "**/*.map",
-  "trace/**/*",
-  "build-manifest.json",
-  "export-marker.json"
-]

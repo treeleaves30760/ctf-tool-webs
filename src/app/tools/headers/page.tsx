@@ -27,7 +27,7 @@ export default function HeadersTool() {
 		analysis.push("=== HTTP標頭分析結果 ===\n");
 		
 		// Security headers analysis
-		const securityHeaders = {
+		const securityHeaders: Record<string, string> = {
 			'content-security-policy': 'CSP保護',
 			'x-frame-options': '點擊劫持保護',
 			'x-content-type-options': 'MIME類型保護',

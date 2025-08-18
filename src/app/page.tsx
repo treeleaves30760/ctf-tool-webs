@@ -525,6 +525,12 @@ export default function Home() {
 			href: "/tools/color",
 			icon: "🎨",
 		},
+		{
+			title: "EXIF元數據",
+			description: "圖片EXIF元數據讀取工具",
+			href: "/tools/exif",
+			icon: "📷",
+		},
 	];
 
 	return (
